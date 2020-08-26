@@ -1,0 +1,27 @@
+<div class="container body p-5">
+  <div class="row" >
+    <div class="col-12 mb-3">
+      <a routerLink="Add" class="btn btn-primary">Add product</a>
+    </div>
+  </div>
+  <div class="row" *ngIf="productServ.products.length == 0">
+    <div class="col-12">
+      <p class="alert alert-primary">
+        There is no product
+      </p>
+    </div>
+  </div>
+  <div class="row" *ngIf="productServ.products.length != 0">
+    <div class="col-md-4" *ngFor = "let product of productServ.products; index as i">
+      <div class="card mt-3" style="width: 18rem;">
+        <a [routerLink]="['Admin/', i]"><img class="card-img-top" [src]="product.urlImg" alt="{{product.name}}"></a>
+        <div class="card-body">
+          <h5 class="card-title">{{product.name | titlecase}} | {{product.price | currency}} </h5>
+          <p class="card-text">{{product.description }} </p>
+          <a href="#" class="btn btn-primary">Add to cart <i class="fa fa-cart-plus pl-1"></i></a>
+          <a (click)="deleteProduct(i)" href="#" class="btn btn-danger float-right">Delete<i class="fa fa-trash pl-1"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

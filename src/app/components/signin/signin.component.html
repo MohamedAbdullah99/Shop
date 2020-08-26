@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 sign-up-box">
+        <form #f="ngForm" (ngSubmit)='signIn(f)'>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationServerUsername">Username</label>
+                <div class="input-group">
+                  <input ngModel name="user_name" #userName='ngModel' [class.is-invalid]="userName.invalid && userName.touched" [class.is-valid]="userName.valid && userName.touched" type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServerUsername">Password</label>
+                <div class="input-group">
+                  <input [class.is-invalid]="password.invalid && password.touched" [class.is-valid]="password.valid && password.touched" #password="ngModel" ngModel name="password" type="password" #password="ngModel" class="form-control is-invalid" id="validationServerUsername" minlength="6" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                  <div class="invalid-feedback">
+                    Please choose a password.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button [disabled]="f.invalid" class="btn btn-primary" type="submit">Create Account</button>
+          </form>
+    </div>
+</div>

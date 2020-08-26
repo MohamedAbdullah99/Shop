@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3 sign-up-box">
+        <form #f="ngForm" (ngSubmit)='signUp(f)'>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationServer01">First name</label>
+                <input ngModel #firstName='ngModel' [class.is-invalid]="firstName.invalid && firstName.touched" [class.is-valid]="firstName.valid && firstName.touched" name="first_name" type="text" class="form-control" id="validationServer01" placeholder="First name" value="Mark" required>
+                    <div class="invalid-feedback">
+                        Please choose a First name.
+                    </div>  
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServer02">Last name</label>
+                <input ngModel name="last_name" #lastName='ngModel' [class.is-invalid]="lastName.invalid && lastName.touched" [class.is-valid]="lastName.valid && firstName.touched" type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" value="Otto" required>
+                <div class="invalid-feedback">
+                    Please choose a Last name.
+                </div>  
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServerUsername">Username</label>
+                <div class="input-group">
+                  <input ngModel name="user_name" #userName='ngModel' [class.is-invalid]="userName.invalid && userName.touched" [class.is-valid]="userName.valid && userName.touched" type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServerEmail">Email</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                  </div>
+                  <input [class.is-invalid]="email.errors?.email && email.touched" [class.is-valid]="!email.errors?.email && email.touched" #email="ngModel" ngModel email  name="email" type="text" class="form-control is-invalid" id="validationServerEmail" placeholder="Email" aria-describedby="inputGroupPrepend3" required>
+                  <div class="invalid-feedback">
+                    Please choose a Email.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServerUsername">Password</label>
+                <div class="input-group">
+                  <input [class.is-invalid]="password.invalid && password.touched" [class.is-valid]="password.valid && password.touched" #password="ngModel" ngModel name="password" type="password" #password="ngModel" class="form-control is-invalid" id="validationServerUsername" minlength="6" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                  <div class="invalid-feedback">
+                    Please choose a password.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServerUsername">Confirm Password</label>
+                <div class="input-group">
+                  <input ngModel name="confirm_password" #confirmPassword="ngModel" type="password" class="form-control" [class.is-valid]="password.value == confirmPassword.value  && confirmPassword.touched" [class.is-invalid]="password.value != confirmPassword.value" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationServer03">City</label>
+                <input [class.is-invalid]="city.invalid && city.touched" [class.is-valid]="city.valid && city.touched" #city="ngModel" ngModel name="city" type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServer04">State</label>
+                <input [class.is-invalid]="state.invalid && state.touched" [class.is-valid]="state.valid && state.touched" #state="ngModel" ngModel name="state" type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="validationServer05">Zip</label>
+                <input [class.is-invalid]="zip.invalid && zip.touched" [class.is-valid]="zip.valid && zip.touched" #zip="ngModel" ngModel name="zip" type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
+                <div class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+            </div>
+            <button [disabled]="f.invalid || password.value != confirmPassword.value" class="btn btn-primary" type="submit">Create Account</button>
+          </form>
+    </div>
+</div>

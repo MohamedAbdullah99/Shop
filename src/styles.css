@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.sign-up-box {
+    padding: 20px 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background: #DDD;
+    border: 1px solid #EEE;
+    border-radius: 15px;
+}

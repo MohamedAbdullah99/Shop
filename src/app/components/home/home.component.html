@@ -17,9 +17,9 @@
         <a [routerLink]="['Admin/', i]"><img class="card-img-top" [src]="product.urlImg" alt="{{product.name}}"></a>
         <div class="card-body">
           <h5 class="card-title">{{product.name | titlecase}} | {{product.price | currency}} </h5>
-          <p class="card-text">{{product.description }} </p>
+          <p class="card-text">{{product.description | slice : 0 : 55 }} ... </p>
           <a href="#" class="btn btn-primary">Add to cart <i class="fa fa-cart-plus pl-1"></i></a>
-          <a (click)="deleteProduct(i)" href="#" class="btn btn-danger float-right">Delete<i class="fa fa-trash pl-1"></i></a>
+          <a (click)="deleteProduct(i)" class="btn btn-danger float-right">Delete<i class="fa fa-trash pl-1"></i></a>
         </div>
       </div>
     </div>

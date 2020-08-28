@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
+import { SummaryPipe } from './pipes/summary.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AddproductComponent } from './components/addproduct/addproduct.componen
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    AddproductComponent
+    AddproductComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { GoodsComponent } from './components/goods/goods.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent , pathMatch: 'full'},
@@ -15,6 +16,8 @@ const routes: Routes = [
   {path: 'Cart', component: CartComponent , pathMatch: 'full'},
   {path: 'Admin/:id', component: GoodsComponent , pathMatch: 'full'},
   {path: 'Admin', component: GoodsComponent , pathMatch: 'full'},
+  {path: 'Blogs/:id', component: BlogComponent , pathMatch: 'full'},
+  {path: 'Blogs', component: BlogComponent , pathMatch: 'full'},
   {path: 'Add', component: AddproductComponent , pathMatch: 'full'},
   {path: '**', component: NotFoundComponent , pathMatch: 'full'},
 

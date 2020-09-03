@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService } from 'src/app/services/auth.service'
+import { User } from 'src/app/interfaces/user.interface';
 
 @Component({
   selector: 'app-signin',
@@ -7,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  isLogdIn = false
+  constructor(private as: AuthService ) { }
 
-  ngOnInit(): void {
+  ngOnInit() : void {
   }
 
   signIn(form) {
-    console.log(form)
+    let data = form.value
+    this.as.signin(data.user_name,data.password).then( response => {
+      this.isLogdIn = true;
+      console.log(form.value)
+    })
+    
   }
 
 }

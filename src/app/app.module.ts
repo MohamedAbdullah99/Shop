@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
-
+import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GoodsComponent } from './components/goods/goods.component';
@@ -17,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { SummaryPipe } from './pipes/summary.pipe';
     FooterComponent,
     HomeComponent,
     AddproductComponent,
-    SummaryPipe
+    SummaryPipe,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,10 @@ import { SummaryPipe } from './pipes/summary.pipe';
         appId: "1:11115983036:web:5df907ed4b54ad7979e0b9",
         measurementId: "G-4P6NG2ZYNZ"
       }
-    )
+    ),
+    AngularFireAuthModule,
+    HttpClientModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

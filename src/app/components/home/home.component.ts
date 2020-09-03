@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from 'src/app/services/shop.service'
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,9 +9,13 @@ import { ShopService } from 'src/app/services/shop.service'
 export class HomeComponent implements OnInit {
 
 
-  constructor(public productServ:ShopService) {}
+  constructor(public productServ:ShopService, ) {}
+
+  url = "https://jsonplaceholder.typicode.com/posts";
+  posts : any;
 
   ngOnInit(): void {
+
   }
 
   deleteProduct(i) {

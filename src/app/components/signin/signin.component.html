@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!isLogdIn">
   <div class="row">
     <div class="col-md-6 offset-md-3 sign-up-box">
         <form #f="ngForm" (ngSubmit)='signIn(f)'>
@@ -24,6 +24,14 @@
             </div>
             <button [disabled]="f.invalid" class="btn btn-primary" type="submit">Create Account</button>
           </form>
-    </div>
+      </div>
+  </div>
 </div>
+
+<div class="container" *ngIf="isLogdIn">
+  <div class="row">
+    <div class="col-md-12 offset-md-3 sign-up-box">
+      Your are loged in :)   
+    </div>
+  </div>
 </div>
